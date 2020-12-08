@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 import vSelect from 'vue-select';
 import DatePicker from 'vue2-datepicker';
-import PouchDB from 'pouchdb';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -12,9 +11,6 @@ import 'vue2-datepicker/index.css';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-
-//PouchDB Config
-var db = new PouchDB('hours-tracking');
 
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);

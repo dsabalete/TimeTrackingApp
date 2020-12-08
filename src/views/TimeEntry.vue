@@ -48,39 +48,25 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
     name: 'TimeEntry',
     data() {
         return {
             formData: {
                 startDate: '',
-                endDate: '',
-                name: ''
-            },
-            foods: [
-                { text: 'Select One', value: null },
-                'Carrots',
-                'Beans',
-                'Tomatoes',
-                'Corn'
-            ]
+                endDate: ''
+            }
         };
     },
     methods: {
-        onSubmit(evt) {
-            evt.preventDefault();
-            alert(JSON.stringify(this.form));
+        ...mapActions(['createTimeEntry']),
+        onSubmit(e) {
+            e.preventDefault();
+            this.createTimeEntry(this.formData);
         },
-        onReset(evt) {
-            evt.preventDefault();
-            // Reset our form values
-            this.form.email = '';
-            this.form.name = '';
-            this.form.food = null;
-            this.form.checked = [];
-        }
+        onReset() {}
     }
 };
 </script>
-
-<style lang="scss" scoped></style>
